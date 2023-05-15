@@ -1,0 +1,19 @@
+.navbar {
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #F8ECC2;
+}
+
+.navbar img {
+  float: right;
+  padding: 10px;
+  max-width: 200px;
+}
+
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
