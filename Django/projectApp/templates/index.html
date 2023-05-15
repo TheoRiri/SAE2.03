@@ -29,7 +29,17 @@
             <img class="hautdroit" src="{% static 'images/rtdev.png' %}" >
           </div>
         </div>
-        </nav>  
+        </nav>
+      <div class="connexion">
+        <h1>Page de connexion</h1>
+        <form>
+          <label for="username">Nom d'utilisateur :</label>
+          <input type="text" id="username" name="username"><br><br>
+          <label for="password">Mot de passe :</label>
+          <input type="password" id="password" name="password"><br><br>
+          <input type="submit" value="Se connecter">
+        </form>
+      </div>
     {% load static %}
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
