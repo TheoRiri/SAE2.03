@@ -30,16 +30,27 @@
           </div>
         </div>
         </nav>
-      <div class="connexion">
-        <h1>Page de connexion</h1>
-        <form>
-          <label for="username">Nom d'utilisateur :</label>
-          <input type="text" id="username" name="username"><br><br>
-          <label for="password">Mot de passe :</label>
-          <input type="password" id="password" name="password"><br><br>
-          <input type="submit" value="Se connecter">
-        </form>
+      {% block content %}
+      <div class="container">
+          <h2>Connexion</h2>
+          <form action="login.php" method="post">
+              <div class="form-group">
+                  <label for="username">Nom d'utilisateur</label>
+                  <input type="text" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                  <label for="password">Mot de passe</label>
+                  <input type="password" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                  <input type="submit" value="Se connecter">
+              </div>
+              <div class="form-group link">
+                  <a href="inscription.html">S'inscrire</a>
+              </div>
+          </form>
       </div>
+      {% endblock %}
     {% load static %}
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
