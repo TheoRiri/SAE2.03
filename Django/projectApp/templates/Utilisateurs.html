@@ -1,3 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
+{% if personnes %}
+<ul>
+    {% for personne in personnes %}
+        <li>
+            <a href="{% url 'personne-detail' personne.id %}">
+            {{ personne.id }}</a> ({{ personne.nom}})
+        </li>
+    {% endfor %}  
+</ul>
+{% else %}
+<p>Il n'y a pas de personne.</p>
+{% endif %}
 {% endblock %}
