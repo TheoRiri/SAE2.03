@@ -6,6 +6,8 @@ urlpatterns = [
     path('Utilisateurs/', views.Utilisateurs, name='Utilisateurs'),
     path('Machines/', views.Machines, name='Machines'),
     path('Accueil/', views.Accueil, name='Accueil'),
-    path('add-machine',views.machine_add_form,name='add-machine'),
-    path('add-personne',views.personne_add_form,name='add-personne'),
+    path('add-machine/',views.machine_add_form,name='add-machine'),
+    path('add-personne/',views.personne_add_form,name='add-personne'),
+    path('personnes/<pk>', views.personne_detail_view, name='personne-detail'),
+    path('machines/<pk>', views.machine_detail_view, name='machine-detail'),
 ]
