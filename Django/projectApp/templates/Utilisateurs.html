@@ -1,8 +1,8 @@
 {% extends "index.html" %}
 {% block content %}
-{% if personnes %}
+{% if personnels %}
 <ul>
-    {% for personne in personnes %}
+    {% for personne in personnels %}
         <li>
             <a href="{% url 'personne-detail' personne.id %}">
             {{ personne.id }}</a> ({{ personne.nom}})
@@ -10,6 +10,6 @@
     {% endfor %}  
 </ul>
 {% else %}
-<p>Il n'y a pas de personne.</p>
+<p>Il n'y a pas d'utilisateur.</p>
 {% endif %}
 {% endblock %}
