@@ -29,7 +29,7 @@ class Machine(models.Model):
     mach=models.CharField(max_length=32, choices=TYPE, default='PC')
 
 class Personnel(models.Model):
-    id = models.PositiveIntegerField(primary_key=True, editable=True, validators=[MaxValueValidator(9999999999999)])
+    id = models.AutoField(primary_key=True, editable=True, validators=[MaxValueValidator(9999999999999)])
     nom = models.CharField(
                     max_length= 50)
 

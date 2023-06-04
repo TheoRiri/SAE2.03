@@ -5,6 +5,10 @@
   background-color: #003366;
 }
 
+.navbar a {
+  color: white;
+}
+
 .navbar img {
   float: right;
   padding: 10px;
@@ -17,6 +21,7 @@
   padding: 14px 16px;
   text-decoration: none;
 }
+
 .connexion h1 {
   text-align: center;
   color: #333;
@@ -27,7 +32,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #C0C0C0;
-  
+
 }
 
 .container {
@@ -75,14 +80,16 @@ h2 {
   text-align: center;
   margin-top: 10px;
 }
-form{
+
+form {
   margin-bottom: 30px;
 }
-h1{
+
+h1 {
   display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    margin: 0;
-    color: black;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  margin: 0;
+  color: black;
 }

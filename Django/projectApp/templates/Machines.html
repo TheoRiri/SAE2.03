@@ -3,13 +3,16 @@
 {% if machines %}
 <ul>
     {% for machine in machines %}
-        <li>
-            <a href="{% url 'machine-detail' machine.id %}">
+    <li>
+        <a href="{% url 'machine-detail' machine.id %}">
             {{ machine.id }}</a> ({{ machine.nom}})
-        </li>
-    {% endfor %}  
+    </li>
+    {% endfor %}
 </ul>
 {% else %}
 <p>Il n'y a pas de machine.</p>
 {% endif %}
+<div><a href="{% url 'add-machine' %}">
+        <button type="button">Ajouter un utilisateur</button>
+    </a></div>
 {% endblock %}

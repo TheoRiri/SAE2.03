@@ -3,13 +3,16 @@
 {% if personnels %}
 <ul>
     {% for personne in personnels %}
-        <li>
-            <a href="{% url 'personne-detail' personne.id %}">
+    <li>
+        <a href="{% url 'personne-detail' personne.id %}">
             {{ personne.id }}</a> ({{ personne.nom}})
-        </li>
-    {% endfor %}  
+    </li>
+    {% endfor %}
 </ul>
 {% else %}
 <p>Il n'y a pas d'utilisateur.</p>
 {% endif %}
+<div><a href="{% url 'add-personne' %}">
+        <button type="button">Ajouter un utilisateur</button>
+    </a></div>
 {% endblock %}
