@@ -1,8 +1,18 @@
 {% extends "index.html" %}
+
 {% block content %}
 <form method="post">
-{% csrf_token %}
-{{ form.nom}}
-<input type="submit" value="Submit">
+    {% csrf_token %}
+    {{ form.nom.label_tag }}
+    {{ form.nom }}
+
+    <label for="{{ form.mach.id_for_label }}">Type de PC:</label>
+    <select name="{{ form.mach.html_name }}" id="{{ form.mach.id_for_label }}">
+        {% for value, label in form.mach.field.choices %}
+        <option value="{{ value }}">{{ label }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="Submit" placeholder="Nom de la machine">
 </form>
 {% endblock %}

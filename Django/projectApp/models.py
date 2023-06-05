@@ -6,11 +6,11 @@ from datetime import datetime
 
 class Machine(models.Model):
 
-    TYPE = (
-        ('PC', ('PC - Run windows')),
-        ('Mac', ('Mac - Run MacOS')),
-        ('Serveur', ('Serveur - Simple Server to deploy virtual machines')),
-        ('Switch', ('Switch - To maintains and connect servers')),
+    TYPE_CHOICES = (
+        ('PC', 'PC - Run Windows'),
+        ('Mac', 'Mac - Run MacOS'),
+        ('Serveur', 'Serveur - Simple Server to deploy virtual machines'),
+        ('Switch', 'Switch - To maintain and connect servers'),
     )
     id = models.AutoField(
                         primary_key=True, 
@@ -26,7 +26,7 @@ class Machine(models.Model):
 
     maintenanceDate=models.DateField(default=datetime.now())
 
-    mach=models.CharField(max_length=32, choices=TYPE, default='PC')
+    mach=models.CharField(max_length=32, choices=TYPE_CHOICES, default='PC')
 
 class Personnel(models.Model):
     id = models.AutoField(primary_key=True, editable=True, validators=[MaxValueValidator(9999999999999)])

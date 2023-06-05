@@ -10,4 +10,5 @@ urlpatterns = [
     path('add-personne/',views.personne_add_form,name='add-personne'),
     path('personnes/<pk>', views.personne_detail_view, name='personne-detail'),
     path('machines/<pk>', views.machine_detail_view, name='machine-detail'),
+    path('supprimer-utilisateurs/', views.supprimer_utilisateurs, name='supprimer-utilisateurs'),
 ]

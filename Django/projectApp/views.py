@@ -17,6 +17,17 @@ def Machines(request):
         'machines' : machines,
     }
     return render(request,"templates/Machines.html",context)
+    if request.method == 'POST':
+        form = AddMachineForm(request.POST or None)
+        if form.is_valid():
+            new_machine = Machine(nom=form.cleaned_data['nom'])
+            new_machine.save()
+            return redirect('Machines')
+    else:
+        form = AddMachineForm()
+        context = {'form': form}
+        return render(request,'templates/machine_add.html',context)
+
 
 def Accueil(request):
     return render(request,"templates/Accueil.html")
@@ -42,6 +53,7 @@ def personne_add_form(request):
             return redirect('Utilisateurs')
     else:
         form = AddPersonnelForm()
+        form.fields['mach'].choices = Machine.TYPE
         context = {'form': form}
         return render(request,'templates/personne_add.html',context)
 
@@ -54,3 +66,9 @@ def personne_detail_view(request, pk):
     personne = get_object_or_404(Personnel, id=pk)
     context={'personne': personne}
     return render(request, 'templates/personne_detail.html',context)
+
+def supprimer_utilisateurs(request):
+    if request.method == 'POST':
+        utilisateurs_a_supprimer = request.POST.getlist('utilisateurs_a_supprimer') 
+        return redirect('Utilisateurs')
+    return render(request, 'Utilisateurs.html')

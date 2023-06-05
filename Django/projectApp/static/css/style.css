@@ -93,3 +93,46 @@ h1 {
   margin: 0;
   color: black;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 50vh;
+  table-layout: fixed;
+
+
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.bord {
+  padding: 10px;
+}
+
+.gauche {
+  width: 40%;
+  top: 0;
+  right: 0;
+
+}
+
+.personne-detail {
+  display: grid;
+  gap: 10px;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+}

@@ -1,8 +1,19 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>Nom: {{ personne.name }}</h1>
-
-    <p><strong>Id</strong>: {{ personne.id}}</p>
-
+<div class="personne-detail">
+    <h1>Nom: {{ personne.nom }}</h1>
+    <div class="detail-row">
+        <div class="detail-label"><strong>ID:</strong></div>
+        <div class="detail-value">{{ personne.id }}</div>
+    </div>
+    <div class="detail-row">
+        <div class="detail-label"><strong>Date de maintenance:</strong></div>
+        <div class="detail-value">{{ personne.maintenanceDate }}</div>
+    </div>
+    <div class="detail-row">
+        <div class="detail-label"><strong>Machine:</strong></div>
+        <div class="detail-value">{{ personne.mach }}</div>
+    </div>
+</div>
 {% endblock %}

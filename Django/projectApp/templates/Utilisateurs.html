@@ -1,18 +1,39 @@
 {% extends "index.html" %}
 {% block content %}
 {% if personnels %}
-<ul>
-    {% for personne in personnels %}
-    <li>
-        <a href="{% url 'personne-detail' personne.id %}">
-            {{ personne.id }}</a> ({{ personne.nom}})
-    </li>
-    {% endfor %}
-</ul>
+<div class="bord">
+    <form method="post" action="{% url 'supprimer-utilisateurs' %}">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Supprimer utilisateur</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for personne in personnels %}
+                <tr>
+                    <td>
+                        {{ personne.id }}</td>
+                    <td>{{ personne.nom }}</td>
+                    <td>
+                        <input type="checkbox" name="utilisateurs_a_supprimer" value="{{ personne.id }}">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <input type="submit" value="Supprimer utilisateur">
+    </form>
+</div>
+
 {% else %}
 <p>Il n'y a pas d'utilisateur.</p>
 {% endif %}
 <div><a href="{% url 'add-personne' %}">
         <button type="button">Ajouter un utilisateur</button>
     </a></div>
+
 {% endblock %}
