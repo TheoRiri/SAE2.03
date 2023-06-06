@@ -13,6 +13,9 @@
         {% endfor %}
     </select>
 
+    {{ form.utilisateur.label_tag }}
+    {{ form.utilisateur }}
+
     <input type="submit" value="Submit" placeholder="Nom de la machine">
 </form>
 {% endblock %}

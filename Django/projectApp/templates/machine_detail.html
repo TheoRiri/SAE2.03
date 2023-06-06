@@ -1,11 +1,15 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>Nom: {{ machine.name }}</h1>
 
-    <p><strong>Id</strong>: {{ machine.id}}</p>
-    <p><strong>Date de maintenance :
-    </strong> {{machine.maintenanceDate}}</p>
-    <p><strong>Machine :
-    </strong> {{ machine.mach }}</p>
+<h1>Nom: {{ machine.nom }}</h1>
+<p><strong>Id</strong>: {{ machine.id}}</p>
+<p><strong>Date de maintenance :</strong> {{machine.maintenanceDate}}</p>
+<p><strong>Machine :</strong> {{ machine.mach }}</p>
+{% if machine.utilisateur %}
+
+<p><strong>Utilisateur :</strong> {{ machine.utilisateur.nom }} {{ machine.utilisateur.prenom }}</p>
+{% else %}
+<p><strong>Utilisateur :</strong> Non associé</p>
+{% endif %}
 {% endblock %}

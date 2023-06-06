@@ -2,7 +2,7 @@
 {% block content %}
 {% if machines %}
 <div class="bord">
-    <form method="post" action="{% url 'supprimer-utilisateurs' %}">
+    <form method="post" action="{% url 'supprimer-machines' %}">
         {% csrf_token %}
         <table>
             <thead>
