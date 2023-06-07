@@ -12,4 +12,5 @@ urlpatterns = [
     path('machines/<pk>', views.machine_detail_view, name='machine-detail'),
     path('supprimer-machines/', views.supprimer_machines, name='supprimer-machines'),
     path('supprimer-utilisateurs/', views.supprimer_utilisateurs, name='supprimer-utilisateurs'),
+    path('modifier-etat-machine/', views.modifier_etat_machine, name='modifier-etat-machine'),
 ]

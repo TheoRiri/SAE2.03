@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Machine, Personnel
 from .forms import AddMachineForm, AddPersonnelForm, DeleteMachineForm
-
+from .models import Machine
 
 def index(request):
     return render(request, "index.html")
@@ -96,3 +96,15 @@ def supprimer_utilisateurs(request):
         return redirect('Utilisateurs')
     
     return redirect('Utilisateurs')
+
+def modifier_etat_machine(request):
+    if request.method == 'POST':
+        machine_ids = request.POST.getlist('etat_machine')
+        for machine_id in machine_ids:
+            machine = get_object_or_404(Machine, id=machine_id)
+            machine.etat_en_ligne = not machine.etat_en_ligne  # Inverse l'état
+            machine.save()
+        # Faire d'autres actions si nécessaire
+
+    machines = Machine.objects.all()
+    return render(request, 'Machines.html', {'machines': machines})

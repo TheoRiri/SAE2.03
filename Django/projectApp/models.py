@@ -25,6 +25,12 @@ class Machine(models.Model):
         ('Serveur', 'Serveur - Simple Server to deploy virtual machines'),
         ('Switch', 'Switch - To maintain and connect servers'),
     )
+
+    ETAT_CHOICES = (
+        ('en_ligne', 'En ligne'),
+        ('hors_ligne', 'Hors ligne'),
+    )
+    etat = models.CharField(max_length=20, choices=ETAT_CHOICES, default='hors_ligne')
     id = models.AutoField(
                         primary_key=True, 
                         editable=False)

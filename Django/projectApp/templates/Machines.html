@@ -9,7 +9,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
-                    <th>Supprimer machine</th>
+                    <th>Supprimer Machine</th>
+                    <th>Etat Machine</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +19,11 @@
                     <td><a href="{% url 'machine-detail' machine.id %}">
                             {{ machine.id }}</a></td>
                     <td>{{ machine.nom }}</td>
+                    {% if machine.etat %}
+                    <td>
+                        <input type="checkbox" name="etat_machine" value="{{ machine.id }}">
+                    </td>
+                    checked{% endif %}
                     <td>
                         <input type="checkbox" name="utilisateurs_a_supprimer" value="{{ machine.id }}">
                     </td>

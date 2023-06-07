@@ -11,6 +11,12 @@ class AddMachineForm(forms.Form):
        ('Serveur', ('Serveur - Simple Server to deploy virtual machines')),
        ('Switch', ('Switch - To maintains and connect servers')),
    )
+
+    ETAT_CHOICES = (
+        ('en_ligne', 'En ligne'),
+        ('hors_ligne', 'Hors ligne'),
+    )
+    etat = forms.ChoiceField(choices=ETAT_CHOICES, required=True)
     nom = forms.CharField(required=True, label='Nom de la machine')
     mach = forms.ChoiceField(choices=TYPE, required=False)
     utilisateur = forms.ModelChoiceField(queryset=Personnel.objects.all(), required=False, label='Utilisateur')
